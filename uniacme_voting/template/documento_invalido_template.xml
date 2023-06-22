@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="documento_invalido_template">
+    <h1>Documento inválido</h1>
+    <p>El documento ingresado no corresponde a un estudiante válido. Por favor, verifique e intente nuevamente.</p>
+</template>
+
+
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="inherit_website_layout" inherit_id="website.layout">
+            <xpath expr="//button[@class='navbar-toggler']" position="inside">
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/votacion/estudiante'">Ir a Votaciones</button>
+            </xpath>
+        </template>
+    </data>
+</odoo>

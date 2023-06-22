@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <template id="participar_votacion_template">
+    <t t-call="website.layout">
+        <t t-set="page_title" t-value="'Participar en Votación'"/>
+        <div class="container">
+            <h1>Participar en Votación</h1>
+            <form method="post" action="/votacion/estudiante/votar">
+                <div>   
+                    <input type="hidden" name="estudiante" t-att-value='estudiante'/>
+                    <label for="votacion">Selecciona la Votación:</label>
+                    <select name="votacion_id" id="votacion">
+                        <t t-foreach="votaciones" t-as="votacion">
+                            <option t-att-value="votacion.id"><t t-esc="votacion.name"/></option>
+                        </t>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit">Ir a Votación</button>
+                </div>
+            </form>
+        </div>
+    </t>
+</template>
+
+    </data>
+</odoo>

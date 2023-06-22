@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="ingresar_documento_template">
+    <form method="post" action="/votacion/estudiante/validar_documento">
+        <label for="documento">Documento:</label>
+        <input type="text" name="documento" required="True" />
+        <button type="submit">Validar documento</button>
+    </form>
+</template>
+</odoo>
+
+
+

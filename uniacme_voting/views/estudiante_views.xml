@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <!-- Vista para el formulario de estudiantes -->
+        <record id="view_estudiante_form" model="ir.ui.view">
+            <field name="name">estudiante.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <!-- Añadir campos personalizados -->
+                    <field name="vat" position="after">
+                        <field name="carrera"/>
+                        <field name="es_estudiante" invisible="1"/>
+                        <field name="sede_id"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+
+        <!-- Vista para la lista de estudiantes -->
+        <record id="view_estudiante_tree" model="ir.ui.view">
+            <field name="name">estudiante.tree</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree string="Estudiantes">
+                    <field name="name"/>
+                    <field name="carrera"/>
+                    <field name="vat"/>
+                    <field name="es_estudiante" invisible="1"/>
+                    <field name="sede_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Vista para el botón de acceso rápido a estudiantes -->
+        <record id="action_estudiante" model="ir.actions.act_window">
+            <field name="name">Estudiantes</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_estudiante_tree"/>
+            <field name="domain">[('es_estudiante', '=', True)]</field>
+        </record>
+
+        <!-- Menú para acceder a la lista de estudiantes -->
+        <menuitem name="Estudiantes" id="menu_estudiante" parent="uniacme_voting.menu_votaciones_1" action="action_estudiante"/>
+    </data>
+</odoo>

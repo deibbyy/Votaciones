@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+ <record model="uniacme_voting.sede" id="sede_belgica">
+    <field name="name">Belgica</field>
+</record>
+
+<record model="uniacme_voting.sede" id="sede_colombia">
+    <field name="name">Colombia</field>
+    <!-- <field name="country" ref="base.co"/> Código de país para Colombia -->
+</record>
+
+<record model="uniacme_voting.sede" id="sede_venezuela">
+    <field name="name">Venezuela</field>
+    <!-- <field name="country" ref="base.ve"/> Código de país para Venezuela -->
+</record>
+
+<record model="uniacme_voting.sede" id="sede_argentina">
+    <field name="name">Argentina</field>
+    <!-- <field name="country" ref="base.ar"/> Código de país para Argentina -->
+</record>
+
+<record model="res.partner" id="estudiante1">
+    <field name="name">carlos</field>
+    <field name="es_estudiante">True</field>
+</record>
+
+    </data>
+</odoo>

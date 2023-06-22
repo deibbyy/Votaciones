@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="view_votacion_form">
+            <field name="name">votacion.form</field>
+            <field name="model">uniacme_voting.votacion</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="iniciar_votaciones" string="Iniciar Votaciones" type="object" class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="fecha_inicio"/>
+                            <field name="fecha_fin"/>
+                            <field name="candidatos"/>
+                            <field name="estado"/>
+                        </group>
+                        <notebook>
+                            <page string="Votos por Candidato">
+                                <field name="votos_por_candidato" >
+                                    <tree readonly="1">
+                                        <field name="candidato_id"/>
+                                        <field name="cantidad_votos"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_votacion_tree">
+            <field name="name">votacion.tree</field>
+            <field name="model">uniacme_voting.votacion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_fin"/>
+                    <field name="candidatos"/>
+                    <field name="estado"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="votacion_action" model="ir.actions.act_window">
+            <field name="name">Votaciones</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">uniacme_voting.votacion</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smilling_face">
+                    Crear votacion
+                </p>
+            </field>
+        </record>
+
+        <record id="action_votaciones_estudiantes" model="ir.actions.act_url">
+            <field name="name">Votaciones Estudiantes</field>
+            <field name="url">/votacion/estudiante</field>
+            <field name="target">self</field>
+        </record>
+
+
+        <menuitem name="Votaciones" id="menu_votacion_root" sequence="50"/>
+        <menuitem name="Votar" id="menu_votar" parent="menu_votacion_root" action="action_votaciones_estudiantes" sequence="100"/>
+        <menuitem name="Votaciones" id="menu_votaciones_1" parent="menu_votacion_root" sequence="20"/>
+        <menuitem name="Votaciones" id="menu_votaciones" parent="uniacme_voting.menu_votaciones_1" action="votacion_action"/>
+    </data>
+</odoo>

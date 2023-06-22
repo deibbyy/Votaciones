@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <!-- Vista para el formulario de candidatos -->
+        <record model="ir.ui.view" id="view_candidato_form">
+            <field name="name">candidato.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="vat" position="after">
+                        <field name="es_candidato" invisible="1"/>
+                        <field name="votacion_ids" invisible="1"/>
+                    </field>                   
+                </data>
+            </field>
+        </record>
+
+        <!-- Vista para la lista de candidatos -->
+        <record model="ir.ui.view" id="view_candidato_tree">
+            <field name="name">candidato.tree</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="vat"/>
+                    <field name="es_candidato" invisible="1"/>
+                    <field name="votacion_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista para el botón de acceso rápido a candidatos -->
+        <record model="ir.actions.act_window" id="action_candidato">
+            <field name="name">Candidatos</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_id" ref="view_candidato_tree"/>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('es_candidato', '=', True)]</field>
+        </record>
+
+        <!-- Menú para acceder a la lista de candidatos -->
+        <menuitem name="Candidatos" id="menu_candidato" parent="menu_votaciones_1" action="action_candidato"/>
+    </data>
+</odoo>

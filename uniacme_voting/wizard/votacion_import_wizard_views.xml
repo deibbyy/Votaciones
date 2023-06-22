@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_votacion_import_wizard_form">
+            <field name="name">votacion.import.wizard.form</field>
+            <field name="model">votacion.import.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Votacion Import Wizard">
+                    <group>
+                        <field name="import_file" filename="import_file"/>
+                    </group>
+                    <footer>
+                        <button name="process_import" string="Import" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_votacion_import_wizard">
+            <field name="name">Votacion Import Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">votacion.import.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_votacion_import_wizard_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- <menuitem name="Votacion Import" id="menu_votacion_import" action="action_votacion_import_wizard"
+                  parent="uniacme_voting.menu_votacion_root" sequence="60"/> -->
+    </data>
+</odoo>

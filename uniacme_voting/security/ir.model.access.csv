@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_uniacme_voting_sede,Acceso a sedes,model_uniacme_voting_sede,base.group_user,1,1,1,1
+access_uniacme_voting_votacion,Acceso a votaciones,model_uniacme_voting_votacion,base.group_user,1,1,1,1
+access_uniacme_voto,Acceso a voto,model_uniacme_voting_voto,base.group_user,1,1,1,1
+access_uniacme_import,Acceso a import,model_votacion_import_wizard,base.group_user,1,1,1,1

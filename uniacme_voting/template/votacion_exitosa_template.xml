@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+        <template id="votacion_exitosa_template">
+    <h1>Votación exitosa</h1>
+    <p>Gracias por tu voto.</p>
+</template>
+    </data>
+</odoo>

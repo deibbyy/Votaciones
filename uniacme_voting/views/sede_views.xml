@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_sede_form">
+            <field name="name">sede.form</field>
+            <field name="model">uniacme_voting.sede</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="direccion"/>
+                            <field name="pais"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sede_action" model="ir.actions.act_window">
+        <field name="name">Sede</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">uniacme_voting.sede</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smilling_face">
+                    Crear Sede
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Sede" id="menu_sede" parent="uniacme_voting.menu_votaciones_1" action="sede_action" sequence="1"/>
+
+    </data>
+</odoo>
